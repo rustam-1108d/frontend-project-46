@@ -1,5 +1,5 @@
-import { getParsedFile } from './parser.js';
 import _ from 'lodash';
+import { getParsedFile } from './parser.js';
 
 const buildDiffTree = (data1, data2) => {
   const keys = _.sortBy(_.union(Object.keys(data1), Object.keys(data2)));
