@@ -17,3 +17,12 @@ test('gendiff flat json files (stylish format)', () => {
   const result = genDiff(file1, file2);
   expect(result).toBe(expected);
 });
+
+test('gendiff flat yaml files (stylish format)', () => {
+  const file1 = getFixturePath('file1.yml');
+  const file2 = getFixturePath('file2.yml');
+  const expected = readFixture('expected-stylish.txt').trim();
+
+  const result = genDiff(file1, file2);
+  expect(result).toBe(expected);
+});
