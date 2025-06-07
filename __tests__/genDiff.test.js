@@ -62,3 +62,21 @@ test('gendiff nested yaml files (plain format)', () => {
   const result = genDiff(file1, file2, 'plain');
   expect(result).toBe(expected);
 });
+
+test('gendiff nested json files (json format)', () => {
+  const file1 = getFixturePath('file1.json');
+  const file2 = getFixturePath('file2.json');
+  const expected = readFixture('expected-json.json').trim();
+
+  const result = genDiff(file1, file2, 'json');
+  expect(result).toBe(expected);
+});
+
+test('gendiff nested yaml files (json format)', () => {
+  const file1 = getFixturePath('file1.yml');
+  const file2 = getFixturePath('file2.yml');
+  const expected = readFixture('expected-json.json').trim();
+
+  const result = genDiff(file1, file2, 'json');
+  expect(result).toBe(expected);
+});
